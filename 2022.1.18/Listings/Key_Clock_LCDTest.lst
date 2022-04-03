@@ -1,0 +1,115 @@
+C51 COMPILER V9.57.0.0   KEY_CLOCK_LCDTEST                                                 03/10/2022 14:20:24 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE KEY_CLOCK_LCDTEST
+OBJECT MODULE PLACED IN .\Objects\Key_Clock_LCDTest.obj
+COMPILER INVOKED BY: D:\RookieCODE\codeApp\Keil\app\C51\BIN\C51.EXE Key_Clock_LCDTest.c OPTIMIZE(8,SPEED) BROWSE DEBUG O
+                    -BJECTEXTEND PRINT(.\Listings\Key_Clock_LCDTest.lst) TABS(2) OBJECT(.\Objects\Key_Clock_LCDTest.obj)
+
+line level    source
+
+   1          #include"include.h"
+   2          
+   3          
+   4          void Serial_init(){//UART串口通信初始化
+   5   1        
+   6   1        PCON &= 0x80;//波特率加倍
+   7   1        TMOD &= 0x0F;//重置
+   8   1        TMOD |= 0x20;//选择方式2：8位自动重装计数
+   9   1        SCON |= 0x50;//选择工作模式
+  10   1        
+  11   1        
+  12   1        EA = 1;//中断总开关
+  13   1        ES = 1;//串行口中断允许位
+  14   1        TH1 = 0xfd; TH0 = 0xfd;//配置波特率
+  15   1        TF1 = 0;//将中断清零
+  16   1        TR1 = 1;//开始定时
+  17   1      }
+  18          
+  19          void SerialUart() interrupt 4
+  20          { 
+  21   1        unsigned char rec_data;
+  22   1        
+  23   1        RI = 0; //清除接收中断标志位 ,这里清零是因为TI和RI共用一个中断口
+  24   1        rec_data=SBUF; //存储接收到的数据 
+  25   1        REC_DATA = rec_data;
+  26   1        SBUF=rec_data; //将接收到的数据放入到发送寄存器 
+  27   1        while(!TI); //等待发送数据完成 
+  28   1        TI=0; //清除发送完成标志位
+  29   1      }
+  30          
+  31          
+  32          /*
+  33                定时器模块
+  34          */
+  35          
+  36          void initClock(){//T0定时器初始化
+  37   1        TMOD |= 0x01;
+  38   1        TH0 = 0xFC;//赋初值64535，代表每次1000us则会溢出一次并引发中断
+  39   1        TL0 = 0x18;
+  40   1        TR0 = 1;
+  41   1        EA = 1;ET0 = 1;//打开总开关中断和T0计时器中断
+  42   1        
+  43   1      
+  44   1      } 
+  45          
+  46          void time0() interrupt 1//定时器中断功能代码
+  47          { static int CountNum = 1;
+  48   1        TH0 = 0xFC;TL0 = 0x18;
+  49   1        if(CountNum++ > 1000)
+  50   1          {CountNum = 0;
+  51   2           P2_0 = ~P2_0;
+  52   2          }
+  53   1            
+  54   1      }
+C51 COMPILER V9.57.0.0   KEY_CLOCK_LCDTEST                                                 03/10/2022 14:20:24 PAGE 2   
+
+  55          
+  56          
+  57          /*
+  58                  外部中断
+  59          */
+  60          
+  61          void InitOutbreak(){
+  62   1        EA = 1;
+  63   1        EX1 = 1;
+  64   1        IT1 = 1;
+  65   1        
+  66   1      }
+  67          
+  68          void Outbreak()interrupt 2
+  69          { delay1ms(20);
+  70   1        if(P3_3 == 0);
+  71   1          P2_0 = !P2_0;
+  72   1      }
+  73          
+  74          /*
+  75              PWM调速
+  76          */
+  77          
+  78          void Init_PWMCount(){//用T1作计数器
+  79   1          TMOD &= 0x00;
+  80   1          TMOD |= 0x20;
+  81   1          EA = 1;
+  82   1          ET1 = 1;
+  83   1      
+  84   1        TL1 = 0x9b;   //设置定时初始值10ms
+  85   1        TH1 = 0x9b;   //设置定时初始值
+  86   1        TF1 = 0;    //清除TF1标志
+  87   1        TR1 = 1;    //定时器1开始计时
+  88   1      }
+  89          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    212    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

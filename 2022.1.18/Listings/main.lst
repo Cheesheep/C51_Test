@@ -1,0 +1,69 @@
+C51 COMPILER V9.57.0.0   MAIN                                                              03/10/2022 14:20:24 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\RookieCODE\codeApp\Keil\app\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND P
+                    -RINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include "include.h"
+   2          
+   3          void main(){
+   4   1        unsigned char* STR;
+   5   1        STR = malloc(sizeof(char)*10);  
+   6   1        //initClock();//定时器初始化
+   7   1      
+   8   1        //LEDTurnBit();
+   9   1      
+  10   1        Serial_init();//串口通信
+  11   1        //显示屏代码
+  12   1        init_1602();
+  13   1        Show_String(0,0,"Happy New Year");
+  14   1        //Show_String(0,1,"Saul");
+  15   1        //Init_PWMCount();
+  16   1        //LEDBinary();
+  17   1        // while(1)
+  18   1        // {  P1_0 = 1;
+  19   1        //  delay(200);
+  20   1        //  P1_0 = 0;
+  21   1        //  delay(200);
+  22   1        // }
+  23   1        while(1){
+  24   2      
+  25   2          P2_0 = 1;
+  26   2          delay(200);
+  27   2          P2_0 = 0;
+  28   2          delay(200);
+  29   2        }
+  30   1      
+  31   1      }
+  32          
+  33          // void PWM_rountine() interrupt 3
+  34          // {  unsigned char temp = PTime;
+  35          //  P1_0 = 1;
+  36          //  while(temp--);
+  37          //  P1_0 = 0;
+  38            
+  39          // }
+  40          
+  41          
+  42          
+  43          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     56    ----
+   CONSTANT SIZE    =     15    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V9.57.0.0   MAIN                                                              03/10/2022 14:20:24 PAGE 2   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

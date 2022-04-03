@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "reg52.h": "c",
+        "REG52.H": "cpp",
+        "regx52.h": "c",
+        "REGX52.H": "cpp",
+        "include.h": "c",
+        "stdlib.h": "c",
+        "STDLIB.H": "cpp",
+        "STDIO.H": "cpp"
+    }
+}
