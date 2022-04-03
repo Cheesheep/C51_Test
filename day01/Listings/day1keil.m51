@@ -1,0 +1,134 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/29/2021  10:28:04  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\ROOKIECODE\CODEAPP\KEIL\APP\C51\BIN\BL51.EXE .\Objects\STARTU32.obj, .\Objects\lesson1.obj TO .\Objects\day1keil PRIN
+>> T (.\Listings\day1keil.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTU32.obj (?C_STARTUP)
+  .\Objects\lesson1.obj (LESSON1)
+
+
+LINK MAP OF MODULE:  .\Objects\day1keil (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?LESSON1
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001EH     UNIT         ?C_C51STARTUP
+            CODE    0021H     0017H     UNIT         ?PR?MAIN?LESSON1
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\day1keil (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LESSON1
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\day1keil (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0003H         SEGMENT       ?C_C51STARTUP
+  I:000AH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:0095H         SYMBOL        ASCL
+  D:00F0H         SYMBOL        B
+  D:00D7H         SYMBOL        DDCCON
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/29/2021  10:28:04  PAGE 2
+
+
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0100H         SYMBOL        IDATALEN
+  C:0018H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:00B2H         SYMBOL        PSCL0H
+  D:00B1H         SYMBOL        PSCL0L
+  D:00B4H         SYMBOL        PSCL1H
+  D:00B3H         SYMBOL        PSCL1L
+  D:00D8H         SYMBOL        S1CON
+  D:0081H         SYMBOL        SP
+  C:0003H         SYMBOL        STARTUP1
+  D:00E1H         SYMBOL        USCL
+  D:00AEH         SYMBOL        WDKEY
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         174
+  C:0003H         LINE#         182
+  C:0005H         LINE#         183
+  C:0007H         LINE#         184
+  C:0009H         LINE#         185
+  C:000BH         LINE#         186
+  C:000DH         LINE#         187
+  C:000FH         LINE#         188
+  C:0011H         LINE#         190
+  C:0013H         LINE#         191
+  C:0015H         LINE#         194
+  C:0017H         LINE#         195
+  C:0018H         LINE#         196
+  C:0019H         LINE#         197
+  C:001BH         LINE#         246
+  C:001EH         LINE#         256
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        LESSON1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0021H         PUBLIC        main
+  B:0090H.0       PUBLIC        p1_1
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:0008H         PUBLIC        a
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0021H         LINE#         6
+  C:0021H         LINE#         7
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/29/2021  10:28:04  PAGE 3
+
+
+  C:0021H         LINE#         8
+  C:0021H         LINE#         9
+  C:0021H         LINE#         10
+  C:0027H         LINE#         11
+  C:0029H         LINE#         12
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LESSON1
+
+Program Size: data=11.0 xdata=0 code=56
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

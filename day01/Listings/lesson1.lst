@@ -1,0 +1,39 @@
+C51 COMPILER V9.57.0.0   LESSON1                                                           07/29/2021 10:28:04 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE LESSON1
+OBJECT MODULE PLACED IN .\Objects\lesson1.obj
+COMPILER INVOKED BY: D:\RookieCODE\codeApp\Keil\app\C51\BIN\C51.EXE lesson1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEN
+                    -D PRINT(.\Listings\lesson1.lst) TABS(2) OBJECT(.\Objects\lesson1.obj)
+
+line level    source
+
+   1          #include<reg52.h>
+   2          sbit p1_1 = P1^0;
+   3          
+   4          
+   5          unsigned int a;
+   6          void main()
+   7          {
+   8   1        while(1)
+   9   1        {
+  10   2        a = 50000;
+  11   2        p1_1 = 0;
+  12   2        while(a--);
+  13   2        }
+  14   1       
+  15   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     23    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
