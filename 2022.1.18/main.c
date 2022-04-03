@@ -30,14 +30,8 @@ void main(){
 
 }
 
-// void PWM_rountine() interrupt 3
-// {	unsigned char temp = PTime;
-// 	P1_0 = 1;
-// 	while(temp--);
-// 	P1_0 = 0;
-	
-// }
 
+//删掉了这里的部分，并增加了这句话
 
 
 

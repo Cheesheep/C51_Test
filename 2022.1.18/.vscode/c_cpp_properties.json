@@ -4,7 +4,7 @@
             "name": "Target 1",
             "includePath": [
                 "D:\\RookieCODE\\codeApp\\Keil\\app\\C51\\INC",
-                "d:\\RookieCODE\\codeApp\\Keil\\testSave\\2022.1.18"
+                "d:\\RookieCODE\\codeApp\\Keil\\C51_Test\\2022.1.18"
             ],
             "defines": [
                 "__C51__",
