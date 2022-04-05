@@ -1,10 +1,10 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/10/2022  14:20:25  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    04/04/2022  00:39:17  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
 D:\ROOKIECODE\CODEAPP\KEIL\APP\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\main.obj, .\Objects\LEDtest.obj, .\Obje
->> cts\Key_Clock_LCDTest.obj, .\Objects\LCD1602.obj, .\Objects\PWM_BreathLED.obj TO .\Objects\2022.1.18Test PRINT (.\Lis
->> tings\2022.1.m51) RAMSIZE (256)
+>> cts\Key_Clock_LCDTest.obj, .\Objects\LCD1602.obj, .\Objects\PWM_BreathLED.obj, .\Objects\basicFun.obj TO .\Objects\20
+>> 22.1.18Test PRINT (.\Listings\2022.1.m51) RAMSIZE (256)
 
 
 MEMORY MODEL: SMALL
@@ -17,6 +17,7 @@ INPUT MODULES INCLUDED:
   .\Objects\Key_Clock_LCDTest.obj (KEY_CLOCK_LCDTEST)
   .\Objects\LCD1602.obj (LCD1602)
   .\Objects\PWM_BreathLED.obj (PWM_BREATHLED)
+  .\Objects\basicFun.obj (BASICFUN)
   D:\ROOKIECODE\CODEAPP\KEIL\APP\C51\LIB\C51S.LIB (?C_INIT)
   D:\ROOKIECODE\CODEAPP\KEIL\APP\C51\LIB\C51S.LIB (?C?CLDPTR)
   D:\ROOKIECODE\CODEAPP\KEIL\APP\C51\LIB\C51S.LIB (?C?UIDIV)
@@ -43,8 +44,8 @@ LINK MAP OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     0007H     UNIT         ?PR?INITOUTBREAK?KEY_CLOCK_LCDTEST
-                    000AH     0001H                  *** GAP ***
+            CODE    0003H     0007H     UNIT         ?CO?MAIN
+            CODE    000AH     0001H     UNIT         ?PR?INTOA?BASICFUN
             CODE    000BH     0003H     ABSOLUTE     
             CODE    000EH     0005H     UNIT         ?PR?CLEAR_1602?LCD1602
             CODE    0013H     0003H     ABSOLUTE     
@@ -58,10 +59,10 @@ LINK MAP OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
             CODE    0256H     0051H     UNIT         ?PR?LEDTURNBIT?LEDTEST
             CODE    02A7H     004FH     UNIT         ?C_INITSEG
             CODE    02F6H     0041H     UNIT         ?PR?OUTBREAK?KEY_CLOCK_LCDTEST
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/04/2022  00:39:17  PAGE 2
+
+
             CODE    0337H     003CH     UNIT         ?PR?_STATIC_DYNAMIC_DIGITAL?LEDTEST
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/10/2022  14:20:25  PAGE 2
-
-
             CODE    0373H     003CH     UNIT         ?PR?_INIT_MEMPOOL?INIT_MEM
             CODE    03AFH     0038H     UNIT         ?PR?MAIN?MAIN
             CODE    03E7H     0035H     UNIT         ?PR?BREATHLED?PWM_BREATHLED
@@ -78,8 +79,8 @@ LINK MAP OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
             CODE    0545H     0015H     UNIT         ?PR?INIT_PWMCOUNT?KEY_CLOCK_LCDTEST
             CODE    055AH     0014H     UNIT         ?PR?INIT_1602?LCD1602
             CODE    056EH     0010H     UNIT         ?PR?INITCLOCK?KEY_CLOCK_LCDTEST
-            CODE    057EH     000FH     UNIT         ?CO?MAIN
-            CODE    058DH     000FH     UNIT         ?PR?GET_KEY_NUM?LEDTEST
+            CODE    057EH     000FH     UNIT         ?PR?GET_KEY_NUM?LEDTEST
+            CODE    058DH     0007H     UNIT         ?PR?INITOUTBREAK?KEY_CLOCK_LCDTEST
 
 
 
@@ -118,8 +119,8 @@ SEGMENT                                       DATA_GROUP
   +--> ?PR?_DELAY1MS?LEDTEST
 
 *** NEW ROOT ***************************************************
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/04/2022  00:39:17  PAGE 3
 
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/10/2022  14:20:25  PAGE 3
 
 
 ?PR?OUTBREAK?KEY_CLOCK_LCDTEST              -----    -----
@@ -173,15 +174,15 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
 
   -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
-  B:00A0H.0       PUBLIC        P2_0
+  B:00A0H.1       PUBLIC        P2_1
   C:03AFH         PUBLIC        main
   -------         PROC          MAIN
   -------         DO            
   D:0042H         SYMBOL        STR
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/04/2022  00:39:17  PAGE 4
+
+
   -------         ENDDO         
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/10/2022  14:20:25  PAGE 4
-
-
   C:03AFH         LINE#         3
   C:03AFH         LINE#         5
   C:03C1H         LINE#         10
@@ -210,7 +211,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
   C:0256H         PUBLIC        LEDTurnBit
   C:04ECH         PUBLIC        _delay1ms
   C:0337H         PUBLIC        _Static_Dynamic_Digital
-  C:058DH         PUBLIC        Get_Key_Num
+  C:057EH         PUBLIC        Get_Key_Num
   C:0530H         PUBLIC        LEDBinary
   C:0504H         PUBLIC        LEDShrink
   D:0008H         PUBLIC        NixieTable
@@ -238,10 +239,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
   C:025FH         LINE#         30
   C:0262H         LINE#         31
   C:0265H         LINE#         32
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/04/2022  00:39:17  PAGE 5
+
+
   C:026AH         LINE#         33
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/10/2022  14:20:25  PAGE 5
-
-
   C:026DH         LINE#         34
   C:027FH         LINE#         35
   C:027FH         LINE#         36
@@ -298,10 +299,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
   -------         ENDPROC       _DELAY1MS
   -------         PROC          LEDSHRINK
   C:0504H         LINE#         78
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/04/2022  00:39:17  PAGE 6
+
+
   C:0504H         LINE#         80
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/10/2022  14:20:25  PAGE 6
-
-
   C:0504H         LINE#         81
   C:0507H         LINE#         82
   C:050EH         LINE#         83
@@ -325,14 +326,14 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
   C:0543H         LINE#         100
   -------         ENDPROC       LEDBINARY
   -------         PROC          GET_KEY_NUM
-  C:058DH         LINE#         103
-  C:058DH         LINE#         104
-  C:0590H         LINE#         105
-  C:0593H         LINE#         106
-  C:0596H         LINE#         107
-  C:0599H         LINE#         108
-  C:059BH         LINE#         109
-  C:059BH         LINE#         110
+  C:057EH         LINE#         103
+  C:057EH         LINE#         104
+  C:0581H         LINE#         105
+  C:0584H         LINE#         106
+  C:0587H         LINE#         107
+  C:058AH         LINE#         108
+  C:058CH         LINE#         109
+  C:058CH         LINE#         110
   -------         ENDPROC       GET_KEY_NUM
   -------         ENDMOD        LEDTEST
 
@@ -358,14 +359,14 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
   D:008DH         PUBLIC        TH1
   B:00A8H.2       PUBLIC        EX1
   B:0088H.2       PUBLIC        IT1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/04/2022  00:39:17  PAGE 7
+
+
   D:008AH         PUBLIC        TL0
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/10/2022  14:20:25  PAGE 7
-
-
   D:008BH         PUBLIC        TL1
   B:0088H.4       PUBLIC        TR0
   B:0088H.6       PUBLIC        TR1
-  C:0003H         PUBLIC        InitOutbreak
+  C:058DH         PUBLIC        InitOutbreak
   C:041CH         PUBLIC        time0
   C:0545H         PUBLIC        Init_PWMCount
   C:049DH         PUBLIC        Serial_init
@@ -417,14 +418,14 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
   C:0448H         LINE#         54
   -------         ENDPROC       TIME0
   -------         PROC          INITOUTBREAK
-  C:0003H         LINE#         61
-  C:0003H         LINE#         62
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/10/2022  14:20:25  PAGE 8
+  C:058DH         LINE#         61
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/04/2022  00:39:17  PAGE 8
 
 
-  C:0005H         LINE#         63
-  C:0007H         LINE#         64
-  C:0009H         LINE#         66
+  C:058DH         LINE#         62
+  C:058FH         LINE#         63
+  C:0591H         LINE#         64
+  C:0593H         LINE#         66
   -------         ENDPROC       INITOUTBREAK
   -------         PROC          OUTBREAK
   C:02F6H         LINE#         68
@@ -478,10 +479,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
   C:0482H         LINE#         15
   C:0482H         LINE#         16
   C:0484H         LINE#         17
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/04/2022  00:39:17  PAGE 9
+
+
   C:0486H         LINE#         18
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/10/2022  14:20:25  PAGE 9
-
-
   C:0488H         LINE#         19
   C:048AH         LINE#         20
   C:0491H         LINE#         21
@@ -538,10 +539,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
   C:0000H         SYMBOL        _ICE_DUMMY_
   B:00A0H.0       PUBLIC        P2_0
   C:03E7H         PUBLIC        BreathLEd
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/04/2022  00:39:17  PAGE 10
+
+
   C:0525H         PUBLIC        _PWM_delay
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/10/2022  14:20:25  PAGE 10
-
-
   -------         PROC          L?0018
   -------         ENDPROC       L?0018
   -------         PROC          _PWM_DELAY
@@ -576,6 +577,15 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
   -------         ENDPROC       BREATHLED
   -------         ENDMOD        PWM_BREATHLED
 
+  -------         MODULE        BASICFUN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:000AH         PUBLIC        IntoA
+  -------         PROC          INTOA
+  C:000AH         LINE#         1
+  C:000AH         LINE#         4
+  -------         ENDPROC       INTOA
+  -------         ENDMOD        BASICFUN
+
   -------         MODULE        ?C?CLDPTR
   C:01E8H         PUBLIC        ?C?CLDPTR
   -------         ENDMOD        ?C?CLDPTR
@@ -589,6 +599,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
   -------         ENDMOD        MALLOC
 
   -------         MODULE        INIT_MEM
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  04/04/2022  00:39:17  PAGE 11
+
+
   X:0000H         PUBLIC        __mem_avail__
   C:0373H         PUBLIC        _init_mempool
   -------         ENDMOD        INIT_MEM
@@ -598,9 +611,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LEDTURNBIT?LEDTEST
-
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/10/2022  14:20:25  PAGE 11
-
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?LEDSHRINK?LEDTEST
@@ -627,6 +637,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
     SEGMENT: ?PR?BREATHLED?PWM_BREATHLED
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INTOA?BASICFUN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_INIT_MEMPOOL?INIT_MEM
 
 *** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
@@ -638,5 +651,5 @@ SYMBOL TABLE OF MODULE:  .\Objects\2022.1.18Test (?C_STARTUP)
     MODULE:  .\Objects\Key_Clock_LCDTest.obj (KEY_CLOCK_LCDTEST)
     ADDRESS: 04DFH
 
-Program Size: data=78.0 xdata=8 code=1433
-LINK/LOCATE RUN COMPLETE.  13 WARNING(S),  0 ERROR(S)
+Program Size: data=78.0 xdata=8 code=1426
+LINK/LOCATE RUN COMPLETE.  14 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,28 @@
+C51 COMPILER V9.57.0.0   BASICFUN                                                          04/04/2022 00:36:30 PAGE 1   
+
+
+C51 COMPILER V9.57.0.0, COMPILATION OF MODULE BASICFUN
+OBJECT MODULE PLACED IN .\Objects\basicFun.obj
+COMPILER INVOKED BY: D:\RookieCODE\codeApp\Keil\app\C51\BIN\C51.EXE basicFun.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTE
+                    -ND PRINT(.\Listings\basicFun.lst) TABS(2) OBJECT(.\Objects\basicFun.obj)
+
+line level    source
+
+   1          void IntoA(){
+   2   1      
+   3   1          
+   4   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      1    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

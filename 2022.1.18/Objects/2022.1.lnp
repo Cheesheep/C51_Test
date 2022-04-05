@@ -3,6 +3,7 @@
 ".\Objects\LEDtest.obj",
 ".\Objects\Key_Clock_LCDTest.obj",
 ".\Objects\LCD1602.obj",
-".\Objects\PWM_BreathLED.obj" 
+".\Objects\PWM_BreathLED.obj",
+".\Objects\basicFun.obj" 
 TO ".\Objects\2022.1.18Test" 
 PRINT(".\Listings\2022.1.m51") RAMSIZE(256) 

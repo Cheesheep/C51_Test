@@ -1,4 +1,4 @@
-C51 COMPILER V9.57.0.0   MAIN                                                              03/10/2022 14:20:24 PAGE 1   
+C51 COMPILER V9.57.0.0   MAIN                                                              04/04/2022 00:39:17 PAGE 1   
 
 
 C51 COMPILER V9.57.0.0, COMPILATION OF MODULE MAIN
@@ -20,7 +20,7 @@ line level    source
   10   1        Serial_init();//串口通信
   11   1        //显示屏代码
   12   1        init_1602();
-  13   1        Show_String(0,0,"Happy New Year");
+  13   1        Show_String(0,0,"CYT SB");
   14   1        //Show_String(0,1,"Saul");
   15   1        //Init_PWMCount();
   16   1        //LEDBinary();
@@ -32,38 +32,30 @@ line level    source
   22   1        // }
   23   1        while(1){
   24   2      
-  25   2          P2_0 = 1;
+  25   2          P2_1 = 1;
   26   2          delay(200);
-  27   2          P2_0 = 0;
+  27   2          P2_1 = 0;
   28   2          delay(200);
   29   2        }
   30   1      
   31   1      }
   32          
-  33          // void PWM_rountine() interrupt 3
-  34          // {  unsigned char temp = PTime;
-  35          //  P1_0 = 1;
-  36          //  while(temp--);
-  37          //  P1_0 = 0;
-  38            
-  39          // }
-  40          
-  41          
-  42          
-  43          
+  33          
+  34          //删掉了这里的部分，并增加了这句话
+  35          //现在再加一句话
+  36          
+  37          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
    CODE SIZE        =     56    ----
-   CONSTANT SIZE    =     15    ----
+   CONSTANT SIZE    =      7    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----       3
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
-
-C51 COMPILER V9.57.0.0   MAIN                                                              03/10/2022 14:20:24 PAGE 2   
 
 
 C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
